@@ -1,7 +1,6 @@
 JAMstack project created using this tutorial:
 [James Q Quick JAMStack tutorial](https://www.youtube.com/watch?v=73b1ZbmB96I&feature=youtu.be)
-
-
+React, FaunaDB and Netlify
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
