@@ -1,30 +1,30 @@
 import React, { useEffect, useState } from 'react';
-import LinkList from './components/LinkList';
-import LinkForm from './components/LinkForm';
-//Grab all of the links
-//display all of the links
+import StoryList from './components/StoryList';
+import StoryForm from './components/StoryForm';
+//Grab all of the stories
+//display all of the stories
 //add delete and archive functionality
 function App() {
-    const [links, setLinks] = useState([]);
-    const loadLinks = async () => {
+    const [stories, setStories] = useState([]);
+    const loadStories = async () => {
         try {
-            const res = await fetch('/.netlify/functions/getLinks');
-            const links = await res.json();
-            setLinks(links);
+            const res = await fetch('/.netlify/functions/getStories');
+            const stories = await res.json();
+            setStories(stories);
         } catch (err) {
             console.error(err);
         }
     };
 
     useEffect(() => {
-        loadLinks();
+        loadStories();
     }, []);
 
     return (
         <div className="container py-5">
-            <h1 className="text-center mb-5">List O' Link</h1>
-            <LinkForm refreshLinks={loadLinks} />
-            <LinkList links={links} refreshLinks={loadLinks} />
+            <h1 className="text-center mb-5">List O' Stories</h1>
+            <StoryForm refreshStories={loadStories} />
+            <StoryList stories={stories} refreshStories={loadStories} />
         </div>
     );
 }

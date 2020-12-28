@@ -1,0 +1,21 @@
+type Story {
+  title: String!
+  subtitle: String!
+  summary: String
+  body: String!
+  image: String
+  archived: Boolean
+  author: Author!
+
+}
+type Author {
+  firstname: String!
+  lastname: String!
+  screenname: String!
+  avatar: String
+  email: String!
+}
+
+type Query {
+  allStories: [Story!]!
+}
